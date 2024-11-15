@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import RepositoryList from "./components/RepositoryLIst";
 import AppBar from "./components/AppBar";
 import { Navigate, Route, Routes } from "react-router-native";
@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     flexShrink: 1,
+  },
+  text: {
+    fontFamily: Platform.select({
+      ios: "Arial",
+      android: "Roboto",
+      default: "System",
+    }),
   },
 });
 
@@ -20,7 +27,6 @@ const Main = () => {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      {/* <RepositoryList /> */}
     </View>
   );
 };
