@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import React from "react";
 
 const styles = StyleSheet.create({
@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
   // ...
 });
 
-const AppBarTab = ({ props }) => {
+const AppBarTab = ({ title }) => {
   return (
     <View>
-      <Text style={styles.container}>{props}</Text>
+      <Text style={styles.container}>{title}</Text>
     </View>
   );
 };
